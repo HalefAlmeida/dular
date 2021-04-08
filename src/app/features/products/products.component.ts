@@ -37,6 +37,9 @@ export class ProductsComponent implements OnInit {
   tiles: Tile[] = [
     { cols: 2, rows: 3, product: this.products[0] },
     { cols: 2, rows: 3, product: this.products[1] },
+    { cols: 2, rows: 3, product: this.products[2] },
+    { cols: 2, rows: 3, product: this.products[2] },
+    { cols: 2, rows: 3, product: this.products[2] },
     { cols: 2, rows: 3, product: this.products[2] }
   ];
 
