@@ -1,0 +1,16 @@
+.product-card {
+    width: 75%;
+    margin: 10px;
+    height: 75%;
+}
+
+.product-image {
+    width:150px;
+    width: 150px;
+}
+
+.photo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

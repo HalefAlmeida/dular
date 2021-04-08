@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { ProductsComponent } from './products.component';
 import { ProductsRoutingModule } from './products-routing.module';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDividerModule } from '@angular/material/divider';
 
 
 @NgModule({
@@ -11,7 +14,10 @@ import { ProductsRoutingModule } from './products-routing.module';
   ],
   imports: [
     CommonModule,
-    ProductsRoutingModule
+    ProductsRoutingModule,
+    MatCardModule,
+    MatGridListModule,
+    MatDividerModule
   ]
 })
 export class ProductsModule { }
