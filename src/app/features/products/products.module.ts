@@ -6,6 +6,7 @@ import { ProductsRoutingModule } from './products-routing.module';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { MatDividerModule } from '@angular/material/divider';
     ProductsRoutingModule,
     MatCardModule,
     MatGridListModule,
-    MatDividerModule
+    MatDividerModule,
+    MatProgressSpinnerModule
   ]
 })
 export class ProductsModule { }

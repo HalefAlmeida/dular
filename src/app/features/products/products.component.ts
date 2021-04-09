@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ProductsService } from './products.service';
+import { delay, map, tap } from "rxjs/operators";
 
 export interface Tile {
   cols: number;
@@ -43,9 +46,14 @@ export class ProductsComponent implements OnInit {
     { cols: 2, rows: 3, product: this.products[2] }
   ];
 
-  constructor() { }
+  products$: Observable<Product[]>
+
+  constructor(
+    private productService: ProductsService
+  ) { }
 
   ngOnInit(): void {
+    this.products$ = this.productService.read()
   }
 
 }

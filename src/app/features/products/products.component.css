@@ -1,16 +1,22 @@
 .product-card {
-    width: 75%;
-    margin: 10px;
-    height: 75%;
+    width: 90%;
+    margin: 5px;
+    height: 85%;
 }
 
 .product-image {
-    width:150px;
-    width: 150px;
+    max-width:150px;
 }
 
 .photo {
+    padding: 5px;
     width: 100%;
     display: flex;
     justify-content: center;
+}
+
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
 }
