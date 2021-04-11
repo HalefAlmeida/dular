@@ -11,9 +11,7 @@ POST http://localhost:3000/departments HTTP/1.1
 content-type: application/json
 
 {
-    "title": "Fritadeira Elétrica sem Óleo Mondial",
-    "value": "499",
-    "photo": "../../../assets/produto-00001.webp"
+    "name": "Eletrodomésticos"
 }
 
 ###

@@ -1,1 +1,4 @@
-<p>departments-list works!</p>
+<app-spinner *ngIf="!(departments$ | async)"></app-spinner>
+<div *ngFor="let department of departments$ | async" class="list-item">
+    <button color="link" mat-raised-button>{{department.name}}</button>
+</div>

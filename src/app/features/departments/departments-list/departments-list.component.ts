@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Department, DepartmentsService } from '../departments.service';
 
 @Component({
   selector: 'app-departments-list',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DepartmentsListComponent implements OnInit {
 
-  constructor() { }
+  departments$: Observable<Department>
+
+  constructor(
+    private departmentsService: DepartmentsService
+  ) { }
 
   ngOnInit(): void {
+    this.departments$ = this.departmentsService.list()
   }
 
 }
