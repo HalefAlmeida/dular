@@ -64,5 +64,10 @@
       "name": "Eletrodomésticos",
       "id": 11
     }
+  ],
+  "cart": [
+    {
+      "id": 1
+    }
   ]
 }

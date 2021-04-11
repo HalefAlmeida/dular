@@ -15,6 +15,10 @@ const routes: Routes = [
   {
     path: 'departments',
     loadChildren: () => import('./features/departments/departments.module').then(m => m.DepartmentsModule)
+  },
+  {
+    path: 'cart',
+    loadChildren: () => import('./features/shopping-cart/shopping-cart.module').then(m => m.ShoppingCartModule)
   }
 ];
 
