@@ -5,6 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `json-server --watch db.json` for a REST API dev server. This is available at `http://localhost:3000/` and is required to run the application corretly locally. You need to install the Json-Server to run this command. Available under `ritwickdey.liveserver` id
 
 ## Code scaffolding
 
