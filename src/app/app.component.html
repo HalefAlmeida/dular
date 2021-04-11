@@ -1,5 +1,5 @@
 <mat-sidenav-container class="sidenav-container">
-    <!-- <mat-sidenav #drawer class="sidenav" fixedInViewport
+  <!-- <mat-sidenav #drawer class="sidenav" fixedInViewport
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
       <mat-toolbar>Menu</mat-toolbar>
@@ -9,21 +9,37 @@
         <a mat-list-item href="#">Link 3</a>
       </mat-nav-list>
     </mat-sidenav> -->
-    <mat-sidenav-content>
-        <mat-toolbar color="primary">
-            <!-- <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <!-- <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
           *ngIf="isHandset$ | async">
           <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
         </button> -->
 
-            <!-- <span>Dular</span> -->
-            <img src="../../../assets/dular-logo.png" style="width: 150px;">
-            <span style="width: 100%;"></span>
-            <mat-icon class="toolbar-icons">search</mat-icon>
-            <mat-icon class="toolbar-icons">person</mat-icon>
-            <mat-icon class="toolbar-icons">shopping_cart</mat-icon>
-        </mat-toolbar>
-        <router-outlet></router-outlet>
+      <!-- <span>Dular</span> -->
+      <img src="../../../assets/dular-logo.png" style="width: 150px;">
+      <span style="width: 100%;"></span>
 
-    </mat-sidenav-content>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+
 </mat-sidenav-container>
+<mat-divider></mat-divider>
+<div class="footer mat-elevation-z8">
+  <div class="buttons">
+    <button mat-icon-button>
+      <mat-icon>home</mat-icon>
+    </button>
+    <button mat-icon-button>
+      <mat-icon>menu</mat-icon>
+    </button>
+    <button mat-icon-button>
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+    <button mat-icon-button>
+      <mat-icon>person</mat-icon>
+    </button>
+  </div>
+</div>
