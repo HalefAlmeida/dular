@@ -18,5 +18,11 @@
       "photo": "../../../assets/produto-00001.webp",
       "id": 3
     }
+  ],
+  "departments": [
+    {
+      "id": 1,
+      "name": "Utilidades Domésticas"
+    }
   ]
 }

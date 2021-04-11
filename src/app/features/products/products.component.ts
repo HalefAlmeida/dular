@@ -53,7 +53,7 @@ export class ProductsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.products$ = this.productService.read()
+    this.products$ = this.productService.list()
   }
 
 }
