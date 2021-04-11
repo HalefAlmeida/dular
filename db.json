@@ -70,16 +70,13 @@
       "id": 1
     }
   ],
-  "cart_itens": [
+  "cart_itens": [],
+  "users": [
     {
       "id": 1,
-      "productId": 1,
-      "cartId": 1
-    },
-    {
-      "id": 2,
-      "productId": 2,
-      "cartId": 1
+      "name": "admin",
+      "email": "admin@dularadmin.com",
+      "password": "admin1029@"
     }
   ]
 }
