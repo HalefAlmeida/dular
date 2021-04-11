@@ -52,13 +52,8 @@
         </mat-card>
     </mat-grid-tile>
 </mat-grid-list> -->
-<ng-template #loading>
-    <div class="loading-spinner">
-        <mat-spinner></mat-spinner>
-    </div>
-
-</ng-template>
-<mat-grid-list cols="4" rowHeight="110px" *ngIf="(products$ | async); else loading">
+<app-spinner *ngIf="!(products$ | async)"></app-spinner>
+<mat-grid-list cols="4" rowHeight="110px" *ngIf="(products$ | async)">
     <mat-grid-tile *ngFor="let product of products$ | async" [colspan]="2" [rowspan]="3">
         <mat-card class="mat-elevation-z4 product-card">
             <div class="photo">
