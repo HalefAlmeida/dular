@@ -69,5 +69,17 @@
     {
       "id": 1
     }
+  ],
+  "cart_itens": [
+    {
+      "id": 1,
+      "productId": 1,
+      "cartId": 1
+    },
+    {
+      "id": 2,
+      "productId": 2,
+      "cartId": 1
+    }
   ]
 }
