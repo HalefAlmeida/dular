@@ -82,6 +82,11 @@
       "email": "admin@dularadmin.com",
       "password": "admin1029@",
       "id": 2
+    },
+    {
+      "email": "admin@dularadmin.com",
+      "password": "admin1029@",
+      "id": 3
     }
   ]
 }
