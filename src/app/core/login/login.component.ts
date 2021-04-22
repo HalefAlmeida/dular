@@ -40,4 +40,16 @@ export class LoginComponent implements OnInit {
     )
   }
 
+  getErrorMessage(control) {
+    if (this.form.get(control).hasError('minlength')) {
+      return 'O valor mínimo permitido é de 8 caracteres';
+    } else if (this.form.get(control).hasError('maxlength')) {
+      return 'O valor máximo permitido é de 15 caracteres';
+    } else if (this.form.get(control).hasError('required')) {
+      return 'Um valor deve ser informado para o campo';
+    };
+
+    return this.form.get(control).hasError('email') ? 'O valor informado não é um e-mail válido' : '';
+  }
+
 }

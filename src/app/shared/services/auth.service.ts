@@ -29,7 +29,7 @@ export class AuthService extends CrudService<User> {
       .pipe(
         tap(res => {
           const authToken = res.headers.get('Authorization')
-          console.log(authToken)
+          console.log(res)
           this.userService.setToken(authToken)
         })
       )
