@@ -77,6 +77,11 @@
       "name": "admin",
       "email": "admin@dularadmin.com",
       "password": "admin1029@"
+    },
+    {
+      "email": "admin@dularadmin.com",
+      "password": "admin2020@",
+      "id": 2
     }
   ]
 }

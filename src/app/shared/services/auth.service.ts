@@ -1,42 +1,45 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { tap } from 'rxjs/operators';
+
+import { EventEmitter, Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from 'src/app/core/login/login.service';
-import { environment } from 'src/environments/environment';
-import { CrudService } from './crud.service';
-import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService extends CrudService<User> {
+export class AuthService {
 
-  constructor(
-    protected http: HttpClient,
-    private userService: UserService
-  ) {
-    super(http, `${environment.API}users`)
+  private usuarioAutenticado: boolean = false;
+
+  mostrarMenuEmitter = new EventEmitter<boolean>();
+
+  constructor(private router: Router) { }
+
+  fazerLogin(email, password) {
+
+    if (email === 'teste@teste.com' &&
+      password === '123456') {
+
+      this.usuarioAutenticado = true;
+
+      this.mostrarMenuEmitter.emit(true);
+
+      this.router.navigate(['/']);
+
+    } else {
+      this.usuarioAutenticado = false;
+
+      this.mostrarMenuEmitter.emit(false);
+    }
   }
 
-  /**Autentica um usuário na aplicação por meio de usuário e senha
-   * 
-   * @param email Email do usuário a ser autenticado
-   * @param password Senha do usuário a ser autenticado
-   * @returns 
-   */
-  autenticate(email: string, password: string) {
-    return this.http.post(`${environment.API}users`, { email, password }, { observe: 'response' })
-      .pipe(
-        tap(res => {
-          const authToken = res.headers.get('Authorization')
-          console.log(res)
-          this.userService.setToken(authToken)
-        })
-      )
+  usuarioEstaAutenticado() {
+    return this.usuarioAutenticado;
   }
 
   logout() {
-    return this.http.get(`${environment.API}users`)
+    this.usuarioAutenticado = false;
+
+    this.mostrarMenuEmitter.emit(false);
   }
 
 }

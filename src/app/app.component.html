@@ -19,7 +19,12 @@
       <!-- <span>Dular</span> -->
       <img src="../../../assets/dular-logo.png" style="width: 150px;">
       <span style="width: 100%;"></span>
-
+      <div *ngIf="mostrarMenu" (click)="logout()">
+        Bem-vindo
+        <button mat-icon-button>
+          <mat-icon>exit_to_app</mat-icon>
+        </button>
+      </div>
     </mat-toolbar>
     <router-outlet></router-outlet>
 
@@ -38,7 +43,7 @@
     <button mat-icon-button [routerLink]="[ '/cart' ]">
       <mat-icon>shopping_cart</mat-icon>
     </button>
-    <button mat-icon-button [routerLink]="[ '/login' ]">
+    <button mat-icon-button [routerLink]="[ '/login' ]" *ngIf="!mostrarMenu">
       <mat-icon>person</mat-icon>
     </button>
   </div>

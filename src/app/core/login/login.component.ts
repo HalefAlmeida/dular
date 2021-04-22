@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
+import { User } from './login.service';
 
 @Component({
   selector: 'app-login',
@@ -12,6 +13,8 @@ export class LoginComponent implements OnInit {
 
   form: FormGroup
 
+  mostrarMenu: boolean = false;
+
   constructor(
     private _fb: FormBuilder,
     private auth: AuthService,
@@ -20,25 +23,19 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this._fb.group({
-      email: [null, Validators.required, Validators.email],
+      email: [null, Validators.email],
       password: [null, Validators.required]
     })
+
+    this.auth.mostrarMenuEmitter.subscribe(
+      mostrar => this.mostrarMenu = mostrar
+    );
   }
 
-  login() {
-    const email = this.form.get('email').value;
-    const password = this.form.get('password').value;
-
-    this.auth.autenticate(email, password).subscribe(
-      () =>
-        this.router.navigate(['products']),
-      err => {
-        console.log(err);
-        this.form.reset();
-        alert('Usuário ou senha incorreto!');
-      }
-    )
+  fazerLogin() {
+    this.auth.fazerLogin(this.form.value['email'], this.form.value['password'])
   }
+
 
   getErrorMessage(control) {
     if (this.form.get(control).hasError('minlength')) {
