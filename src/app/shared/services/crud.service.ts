@@ -14,8 +14,8 @@ export class CrudService<T> {
 
   list() {
     return this.http.get<T[]>(this.API_URL)
-      .pipe(
-        delay(2000)
-      );
+    // .pipe(
+    //   delay(500)
+    // );
   }
 }

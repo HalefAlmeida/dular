@@ -1,0 +1,33 @@
+<ng-template #logged>
+    Usuário já autenticado
+</ng-template>
+<mat-card *ngIf="!mostrarMenu; else logged">
+    <div style=" display: flex; justify-content: center;">
+        <img src="../../../assets/dular-logo.png">
+    </div>
+    <mat-card-content>
+        <form [formGroup]="form" (ngSubmit)="fazerLogin()">
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Email" formControlName="email">
+                        <mat-error *ngIf="form.get('email').touched">{{
+                            getErrorMessage('email') }}
+                        </mat-error>
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field class="full-width">
+                        <input type="password" matInput placeholder="Senha" formControlName="password">
+                        <mat-error *ngIf="form.get('password').touched">{{
+                            getErrorMessage('password') }}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div>
+                <button mat-raised-button class="full-width-button" [disabled]='form.invalid' color="primary"
+                    type="submit">Fazer login</button>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>

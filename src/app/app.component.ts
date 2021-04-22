@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './shared/services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'dular-project';
+  title = 'Dular';
+
+  mostrarMenu: boolean = false;
+
+  constructor(private auth: AuthService) {
+
+  }
+
+  ngOnInit() {
+    this.auth.mostrarMenuEmitter.subscribe(
+      mostrar => this.mostrarMenu = mostrar
+    );
+  }
+
+  logout() {
+    this.auth.logout()
+  }
 }
