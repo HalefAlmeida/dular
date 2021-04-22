@@ -2,6 +2,7 @@ mat-card {
     top: 50px;
     width: 70%;
     margin: 0 auto;
+    max-width: fit-content;
 }
 .col {
     display: flex;
