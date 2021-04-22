@@ -1,0 +1,30 @@
+  
+http://localhost:3000/departments
+
+###
+
+GET http://localhost:3000/products/1
+
+###
+
+POST http://localhost:3000/departments HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Eletrodomésticos"
+}
+
+###
+
+PUT http://localhost:3000/products/2 HTTP/1.1
+content-type: application/json
+
+{
+    "title": "BLACK+DECKER Ferro de Passar 1800W Preto 220V",
+    "value": "499",
+    "photo": "../../../assets/produto-00002.webp"
+}
+
+###
+
+DELETE http://localhost:3000/products/2

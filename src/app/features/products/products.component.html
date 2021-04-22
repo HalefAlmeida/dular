@@ -1,0 +1,71 @@
+<!-- <mat-grid-list cols="2" rowHeight="1:1">
+    <mat-grid-tile>
+        <mat-card class="mat-elevation-z4 product-card">
+            <img src="../../../assets/produto-00001.webp" class="product-image">
+            <mat-card-actions>
+                <span style="font-size: 14pt;">R$ 399,00</span>
+                <br>
+                <span style="color: limegreen;"><b>1x de R$ 399,00</b></span>
+                <br>
+                <span>Fritadeira Elétrica sem Óleo Mondial</span>
+            </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card class="mat-elevation-z4 product-card">
+            <img src="../../../assets/imagem-00002.jpg" class="product-image">
+            <mat-card-actions>
+                <span style="font-size: 14pt;">R$ 399,00</span>
+                <br>
+                <span style="color: limegreen;"><b>1x de R$ 499,00</b></span>
+                <br>
+                <span>BLACK+DECKER Ferro de Passar 1800W Preto 220V</span>
+            </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card class="mat-elevation-z4 product-card">
+            <img src="../../../assets/imagem-00002.jpg" class="product-image">
+            <mat-card-actions>
+                <span style="font-size: 14pt;">R$ 399,00</span>
+                <br>
+                <span style="color: limegreen;"><b>1x de R$ 499,00</b></span>
+                <br>
+                <span>BLACK+DECKER Ferro de Passar 1800W Preto 220V</span>
+            </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list> -->
+<!-- <mat-grid-list cols="4" rowHeight="110px">
+    <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows">
+        <mat-card class="mat-elevation-z4 product-card">
+            <div class="photo">
+                <img src="{{tile.product.photo}}" class="product-image">
+            </div>
+            <mat-card-actions>
+                <mat-divider></mat-divider>
+                <br>
+                <span style="font-size: 16pt;">{{ tile.product.value | currency:'BRL'}}</span>
+                <br>
+                <span>{{tile.product.title}}</span>
+            </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list> -->
+<app-spinner *ngIf="!(products$ | async)"></app-spinner>
+<mat-grid-list cols="4" rowHeight="110px" *ngIf="(products$ | async)">
+    <mat-grid-tile *ngFor="let product of products$ | async" [colspan]="2" [rowspan]="3">
+        <mat-card class="mat-elevation-z4 product-card">
+            <div class="photo">
+                <img src="{{ product.photo }}" class="product-image">
+            </div>
+            <mat-card-actions>
+                <mat-divider></mat-divider>
+                <br>
+                <span style="font-size: 16pt;">{{ product.value | currency:'BRL'}}</span>
+                <br>
+                <span>{{product.title}}</span>
+            </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

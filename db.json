@@ -1,0 +1,87 @@
+{
+  "products": [
+    {
+      "title": "Batedeira Planetária BBP515V Inox 500W",
+      "value": "449.90",
+      "photo": "../../../assets/produto-00003.jpg",
+      "id": 1
+    },
+    {
+      "title": "BLACK+DECKER Ferro de Passar 1800W Preto 220V",
+      "value": "499",
+      "photo": "../../../assets/produto-00002.jpg",
+      "id": 2
+    },
+    {
+      "title": "Fritadeira Elétrica sem Óleo Mondial",
+      "value": "499",
+      "photo": "../../../assets/produto-00001.webp",
+      "id": 3
+    }
+  ],
+  "departments": [
+    {
+      "id": 1,
+      "name": "Utilidades Domésticas"
+    },
+    {
+      "name": "Telefonia",
+      "id": 2
+    },
+    {
+      "name": "Pet",
+      "id": 3
+    },
+    {
+      "name": "Papelaria",
+      "id": 4
+    },
+    {
+      "name": "Móveis",
+      "id": 5
+    },
+    {
+      "name": "Instrumentos Musicais",
+      "id": 6
+    },
+    {
+      "name": "Informática",
+      "id": 7
+    },
+    {
+      "name": "Infantil",
+      "id": 8
+    },
+    {
+      "name": "Ferramentas",
+      "id": 9
+    },
+    {
+      "name": "Esporte e Lazer",
+      "id": 10
+    },
+    {
+      "name": "Eletrodomésticos",
+      "id": 11
+    }
+  ],
+  "cart": [
+    {
+      "id": 1
+    }
+  ],
+  "cart_itens": [],
+  "users": [
+    {
+      "id": 1,
+      "name": "admin",
+      "email": "admin@dularadmin.com",
+      "password": "admin1029@"
+    },
+    {
+      "email": "admin@dularadmin.com",
+      "password": "admin2020@",
+      "id": 2
+    }
+  ]
+}
